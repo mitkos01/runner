@@ -1,10 +1,15 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
-    public float playerSpeed = 5f;
-    public float velocity = 5f;
+    public float velocity = 7f;
+
+    public MovePipe movePipe;
+
     private Rigidbody2D rb;
+    public TMP_Text speedText;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -26,5 +31,19 @@ public class PlayerController : MonoBehaviour
         }
         
         rb.linearVelocity = move * velocity;
+    }
+
+    
+
+    void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        //gameObject.SetActive(false);
+        RestartGame();
+        
     }
 }
