@@ -228,7 +228,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PipeSpawner
   maxTime: 2
   heightRange: 7
-  pipePrefab: {fileID: 5735799068255486232, guid: 7cd380df6361d194b989f959f5225273, type: 3}
+  prefabs:
+  - {fileID: 5735799068255486232, guid: 7cd380df6361d194b989f959f5225273, type: 3}
+  - {fileID: 5735799068255486232, guid: cc0fb9d6034fc1e4cbf6d7fdbcab145e, type: 3}
+  - {fileID: 5735799068255486232, guid: 9f6690421a351454986fcec82d0a7238, type: 3}
   timer: 0
 --- !u!4 &416256568
 Transform:
