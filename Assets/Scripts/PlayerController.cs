@@ -30,7 +30,13 @@ public class PlayerController : MonoBehaviour
             move = Vector2.down;
         }
         
-        rb.linearVelocity = move * velocity;
+        Vector2 targetVelocity = move * velocity;
+
+        rb.linearVelocity = Vector2.Lerp(
+            rb.linearVelocity,
+            targetVelocity,
+            5f * Time.fixedDeltaTime
+        );
     }
 
     
